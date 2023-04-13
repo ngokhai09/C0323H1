@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>a</p>
+    <input type="text" id="a" />
+    <p>b</p>
+    <input type="text" id="b" />
+    <p>c</p>
+    <input type="text" id="c" />
+    <br />
+    <button onclick="kiemTraTamGiac()">Kiem tra</button>
+  </body>
+  <script>
+    function kiemTraTamGiac() {
+      let a = +document.getElementById("a").value;
+      let b = +document.getElementById("b").value;
+      let c = +document.getElementById("c").value;
+      if (a > 0 && b > 0 && c > 0) {
+        if (a + b > c && a + c > b && b + c > a) {
+          alert("Là tam giác");
+        } else alert("Không phải tam giác");
+      } else {
+        alert("Không phải tam giác");
+      }
+    }
+  </script>
+</html>

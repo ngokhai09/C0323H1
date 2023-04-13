@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Số tiền (VNĐ)</p>
+    <input type="text" id="a" />
+    <p>Số tháng</p>
+    <input type="text" id="b" />
+    <p>Lãi suất (%)</p>
+    <input type="text" id="c" />
+    <br />
+    <button onclick="lai()">Kiem tra</button>
+  </body>
+  <script>
+    function lai() {
+      let soTien = +document.getElementById("a").value;
+      let soThang = +document.getElementById("b").value;
+      let laiSuat = +document.getElementById("c").value;
+      laiSuat = laiSuat / 12 / 100;
+      // Tháng 1: Số tiền * Lãi suất + Số tiền
+      // Tháng 2: (Số tiền + Lãi t1) * lãi suât + (Số tiền + Lãi t1)
+      // Tháng 3: (Số tiền + Lãi t1 + lãi t2) * lãi suât + (Số tiền + Lãi t1 + lãi t2)
+      for (let i = 1; i <= soThang; i++) {
+        soTien = soTien * laiSuat + soTien;
+      }
+      alert("Số tiền bạn nhận được là: " + soTien);
+    }
+  </script>
+</html>
